@@ -971,9 +971,7 @@
             padding: 40px;
         }
 
-      /* Add these properties to your existing CSS */
-
-/* Ensure the row centers all content */
+      /* Ensure the row centers all content */
 .row.g-4.mt-2 {
     display: flex;
     flex-wrap: wrap;
@@ -984,33 +982,32 @@
     max-width: 1200px;
 }
 
-/* Make all columns equal height and centered */
+/* Make all columns equal height and centered - REMOVED FIXED MIN-HEIGHT */
 .row.g-4.mt-2 > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 25px 20px;
-    height: auto;
-    min-height: 380px; /* Ensures all boxes are equal height */
+    height: auto; /* Let content determine height */
 }
 
 /* Center the icon container */
 .service-icon-box {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     background-color: var(--primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px auto; /* Changed to auto margins for perfect centering */
-    flex-shrink: 0; /* Prevents icon from shrinking */
+    margin: 0 auto 20px auto;
+    flex-shrink: 0;
 }
 
 /* Ensure icon itself is centered */
 .service-icon-box i {
-    font-size: 35px;
+    font-size: 40px;
     color: white;
     display: block;
     line-height: 1;
@@ -1019,7 +1016,7 @@
 
 /* Center titles */
 .row.g-4.mt-2 h3 {
-    font-size: 22px !important;
+    font-size: 24px !important;
     font-weight: 600;
     color: var(--primary);
     margin: 15px 0 10px 0;
@@ -1027,22 +1024,19 @@
     text-align: center;
 }
 
-/* Center paragraphs with fixed height */
+/* Center paragraphs - REMOVED FIXED HEIGHT AND TEXT CLAMPING */
 .row.g-4.mt-2 p {
-    font-size: 16px !important;
+    font-size: 18px !important;
     line-height: 1.6;
     color: var(--text-dark);
-    max-width: 300px;
+    max-width: 320px;
     margin: 0 auto;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-break: keep-all;
-    height: 77px;
     text-align: center;
     width: 100%;
+    height: auto; /* Let content determine height */
+    overflow: visible; /* Show all text */
+    display: block; /* Remove webkit-box display */
+    -webkit-line-clamp: unset; /* Remove line clamp */
 }
 
 /* Dark mode support */
@@ -1059,16 +1053,48 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 992px) {
+    .row.g-4.mt-2 p {
+        font-size: 17px !important;
+        max-width: 300px;
+    }
+}
+
 @media (max-width: 768px) {
     .row.g-4.mt-2 > div {
-        min-height: 350px;
         padding: 20px 15px;
+    }
+    
+    .service-icon-box {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 15px auto;
+    }
+    
+    .service-icon-box i {
+        font-size: 35px;
+    }
+    
+    .row.g-4.mt-2 h3 {
+        font-size: 22px !important;
+        margin: 10px 0 8px 0;
+    }
+    
+    .row.g-4.mt-2 p {
+        font-size: 16px !important;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .row.g-4.mt-2 > div {
+        padding: 15px 10px;
     }
     
     .service-icon-box {
         width: 70px;
         height: 70px;
-        margin: 0 auto 15px auto;
+        margin: 0 auto 12px auto;
     }
     
     .service-icon-box i {
@@ -1077,34 +1103,11 @@
     
     .row.g-4.mt-2 h3 {
         font-size: 20px !important;
-        margin: 10px 0 8px 0;
     }
     
     .row.g-4.mt-2 p {
         font-size: 15px !important;
-        height: 72px;
-        max-width: 260px;
-    }
-}
-
-@media (max-width: 576px) {
-    .row.g-4.mt-2 > div {
-        min-height: 320px;
-        padding: 15px 10px;
-    }
-    
-    .service-icon-box {
-        width: 60px;
-        height: 60px;
-        margin: 0 auto 12px auto;
-    }
-    
-    .service-icon-box i {
-        font-size: 26px;
-    }
-    
-    .row.g-4.mt-2 p {
-        max-width: 220px;
+        max-width: 250px;
     }
 }
     </style>
