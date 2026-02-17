@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass Housing Society | Real Estate Blog</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Montserrat (professional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8e4585;
+            --primary-light: #a864a0;
+            --primary-very-light: white;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: white;
+            --bg-dark: #121212;
+        }
+
+        .dark-mode {
+            --primary: #121212;
+            --primary-light: #1e1e1e;
+            --primary-very-light: #2a2a2a;
+            --text-dark: #e0e0e0;
+            --text-light: #ffffff;
+            --bg-light: #2a2a2a;
+            --bg-dark: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+             font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            transition: all 0.3s ease;
+            position: relative;
+            padding-top: 80px;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            margin: auto;
+            background-image: url("Images/transparent-logo-1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 600px auto;
+            opacity: 0.10;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .dark-mode body::before {
+            background-image: url("Images/colored-logo[1].png")
+        }
+
+        .dark-mode {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .dark-mode h1,
+        .dark-mode h2,
+        .dark-mode h3,
+        .dark-mode h4,
+        .dark-mode h5,
+        .dark-mode h6 {
+            color: var(--text-light);
+        }
+
+        /* Typography - Fixed Font Sizes - STRICTLY ENFORCED */
+        h1 {
+            font-size: 41px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: 35px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: 27px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        h4 {
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        h5,
+        h6 {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        /* ALL text elements strictly 18px */
+        p,
+        li,
+        span,
+        
+        .text-muted,
+        .lead,
+        .copyright,
+        .blog-meta,
+        .blog-excerpt,
+        .about-feature-text,
+        .footer-links a,
+        .footer-social a,
+        .blog-category,
+        .badge,
+        .dropdown-item,
+        .nav-link,
+        .navbar-brand,
+        .footer-logo,
+        .section-subtitle,
+        .feature-card-text,
+        .pricing-feature-text {
+            font-size: 18px !important;
+        }
+
+        .dark-mode p,
+        .dark-mode li,
+        .dark-mode span,
+        .dark-mode a:not(.btn),
+        .dark-mode .text-muted,
+        .dark-mode .lead,
+        .dark-mode .copyright,
+        .dark-mode .blog-meta,
+        .dark-mode .blog-excerpt,
+        .dark-mode .footer-links a,
+        .dark-mode .about-feature-text,
+        .dark-mode .blog-category,
+        .dark-mode .dropdown-item,
+        .dark-mode .feature-card-text,
+        .dark-mode .pricing-feature-text {
+            color: var(--text-dark);
+        }
+
+        /* Navbar - FIXED FOR STICKY */
+        .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .dark-mode .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-light) !important;
+            display: flex;
+            align-items: center;
+            margin-right: 0;
+            white-space: nowrap;
+        }
+
+        .navbar-brand img {
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 5px;
+            color: var(--text-light) !important;
+            transition: all 0.3s ease;
+            padding: 8px 15px !important;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            /* background-color: rgba(255, 255, 255, 0.2); */
+            color: var(--text-light) !important;
+        }
+
+        .dropdown-menu {
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--bg-light);
+            line-height: 1.5rem;
+        }
+
+        .dark-mode .dropdown-menu {
+            background-color: var(--primary-light);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            color: var(--text-dark);
+        }
+
+        .dark-mode .dropdown-item {
+            color: var(--text-dark);
+        }
+
+        .dropdown-item:hover {
+            background-color: #f5eaf4;
+            color: #8e4585;
+        }
+
+        .dark-mode .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+
+        /* Custom Toggle Button with Close Icon */
+        .custom-toggler {
+            border: 1px solid var(--text-light);
+            background: none;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .custom-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .custom-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6L24 24M6 24L24 6'/%3e%3c/svg%3e");
+        }
+
+        .custom-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Dark Mode Toggle - FIXED */
+        .dark-mode-toggle {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            color: var(--text-light);
+            flex-shrink: 0;
+        }
+
+        .dark-mode .dark-mode-toggle {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode-toggle i {
+            font-size: 20px;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode-toggle .fa-sun {
+            display: block;
+        }
+
+        .dark-mode-toggle .fa-moon {
+            display: none;
+        }
+
+        .dark-mode .dark-mode-toggle .fa-sun {
+            display: none;
+        }
+
+        .dark-mode .dark-mode-toggle .fa-moon {
+            display: block;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: rotate(15deg);
+        }
+
+      /* Register Button - No blinking, no animations */
+.register-btn {
+    background-color: var(--text-light);
+    color: var(--primary) !important;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-left: 10px;
+    text-decoration: none !important;
+    font-size: 18px !important;
+    display: inline-block;
+    cursor: pointer;
+    animation: none !important;  /* Remove any animations */
+    -webkit-animation: none !important;
+    transition: none !important;  /* Remove transitions */
+}
+
+/* Remove all hover effects completely */
+.register-btn:hover,
+.register-btn:focus,
+.register-btn:active,
+.register-btn:visited {
+    background-color: var(--text-light) !important;
+    color: var(--primary) !important;
+    border: none !important;
+    padding: 8px 25px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    margin-left: 10px !important;
+    text-decoration: none !important;
+    font-size: 18px !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    transform: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+}
+
+        .dark-mode .register-btn {
+            color: var(--primary) !important;
+        }
+
+        .dark-mode .register-btn:hover {
+            background-color: #f0f0f0;
+            color: var(--primary) !important;
+        }
+
+        .mobile-menu-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse .register-btn.mobile {
+                display: inline-flex !important;
+                justify-content: center;
+                align-items: center;
+                /* width: 100%; */
+                /* margin-top: 10px; */
+            }
+        }
+
+        main {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 40px 0;
+        }
+
+        /* Blog Hero Section */
+        .blog-hero {
+            background: linear-gradient(135deg,
+                    rgba(142, 69, 133, 0.08) 0%,
+                    rgba(168, 100, 160, 0.08) 100%);
+            /* padding: 40px 0; */
+            text-align: center;
+        }
+
+        /* Section 1: About Real Estate Industry - Reduced text and 4 cards */
+        .about-section {
+            background-color: rgba(142, 69, 133, 0.03);
+        }
+
+        .dark-mode .about-section {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .feature-card {
+            background-color: var(--bg-light);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: center;
+        }
+
+        .dark-mode .feature-card {
+            background-color: var(--primary-very-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(142, 69, 133, 0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(142, 69, 133, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .dark-mode .feature-icon {
+            background-color: var(--text-light);
+        }
+
+        .dark-mode .pricing-price {
+            color: var(--text-light);
+        }
+
+        .feature-card-text {
+            font-size: 18px;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Section 2: Real Estate Content */
+        .content-section {
+            background-color: var(--bg-light);
+        }
+
+        .dark-mode .content-section {
+            background-color: var(--bg-dark);
+        }
+
+        .content-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .content-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Section 3: Pricing Template */
+        .pricing-section {
+            background-color: rgba(142, 69, 133, 0.03);
+        }
+
+        .dark-mode .pricing-section {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .pricing-card {
+            background-color: var(--bg-light);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .dark-mode .pricing-card {
+            background-color: var(--primary-very-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(142, 69, 133, 0.1);
+            border-color: var(--primary);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(142, 69, 133, 0.1);
+        }
+
+        .dark-mode .pricing-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-title {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .pricing-price {
+            font-size: 41px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .pricing-period {
+            font-size: 18px;
+            color: var(--text-dark);
+            opacity: 0.8;
+        }
+
+        .dark-mode .pricing-period {
+            color: var(--text-dark);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(142, 69, 133, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .dark-mode .pricing-features li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .pricing-features li.disabled {
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            padding:14px 40px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .pricing-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(142, 69, 133, 0.2);
+            color: white;
+        }
+
+        .pricing-btn.secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .pricing-btn.secondary:hover {
+            background-color: rgba(142, 69, 133, 0.1);
+        }
+
+        /* Footer */
+        .simple-footer {
+            background-color: var(--primary);
+            color: var(--text-light) !important;
+            padding: 40px 0 20px;
+        }
+
+        .dark-mode .simple-footer {
+            background-color: var(--primary);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            color: var(--text-light) !important;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: var(--text-light) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .footer-social a {
+            color: var(--text-light) !important;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .footer-social a:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            opacity: 0.8;
+            color: var(--text-light);
+        }
+
+        /* Text Colors for Dark Mode */
+        .dark-mode .text-muted {
+            color: #b0b0b0 !important;
+        }
+
+        .dark-mode .text-primary {
+            color: var(--text-light) !important;
+        }
+
+        .badge.bg-primary {
+            background-color: var(--primary-light) !important;
+            color: var(--text-light) !important;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.6s;
+        }
+
+        /* =============== RESPONSIVE FIXES =============== */
+
+        /* Large Desktop */
+        @media (max-width: 1920px) {
+            .container {
+                max-width: 1600px;
+            }
+        }
+
+        @media (max-width: 1536px) {
+            .container {
+                max-width: 1400px;
+            }
+        }
+
+        @media (max-width: 1366px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        @media (max-width: 1280px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 35px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 20px;
+            }
+
+            h5,
+            h6 {
+                font-size: 18px;
+            }
+
+            /* Maintain 18px for all text elements */
+            p,
+            li,
+            span,
+            a:not(.btn),
+            .text-muted,
+            .lead,
+            .copyright,
+            .blog-meta,
+            .blog-excerpt,
+            .footer-links a,
+            .footer-social a,
+            .about-feature-text,
+            .blog-category,
+            .badge,
+            .dropdown-item,
+            .nav-link,
+            .navbar-brand,
+            .footer-logo {
+                font-size: 18px !important;
+            }
+
+            .navbar-brand span {
+                font-size: 16px !important;
+                line-height: 1.2;
+            }
+
+            .navbar-brand img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .content-image img {
+                height: 350px;
+            }
+
+            .pricing-price {
+                font-size: 36px;
+            }
+        }
+
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            body {
+                padding-top: 100px;
+            }
+
+            .navbar-collapse {
+                background-color: var(--primary);
+                padding: 20px;
+                border-radius: 8px;
+                /* margin-top: 10px; */
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                line-height: 0;
+            }
+
+            .dark-mode .navbar-collapse {
+                background-color: var(--primary);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-item {
+                margin-bottom: 10px;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-nav .nav-item {
+                width: 100%;
+            }
+
+            .navbar-nav .nav-link {
+                text-align: center;
+                width: 100%;
+                padding: 12px 15px !important;
+            }
+
+            .navbar-collapse .dark-mode-toggle {
+                margin: 10px auto 5px;
+                display: block;
+                width: 45px;
+                height: 45px;
+            }
+
+            .navbar-collapse .nav-item {
+                margin-bottom: 15px;
+            }
+
+            .custom-toggler {
+                order: 2;
+            }
+
+            .navbar-brand {
+                order: 0;
+                margin-right: auto;
+                max-width: 200px;
+            }
+
+            .mobile-menu-container .register-btn.mobile {
+                display: inline-flex !important;
+                order: 1;
+                margin-right: 5px;
+                padding: 8px 20px;
+                font-size: 16px !important;
+            }
+
+            .mobile-menu-container {
+                gap: 8px;
+                min-width: 120px;
+                justify-content: flex-end;
+            }
+
+            .register-btn.desktop {
+                display: none !important;
+            }
+
+            .blog-hero h1 {
+                font-size: 32px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            .content-image img {
+                height: 300px;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+                margin-top: 0;
+            }
+
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+
+            h5,
+            h6 {
+                font-size: 16px;
+            }
+
+            .blog-hero h1 {
+                font-size: 28px;
+            }
+
+            .blog-hero p {
+                font-size: 18px;
+                padding: 0 10px;
+            }
+
+            .feature-card {
+                margin-bottom: 25px;
+                padding: 20px;
+            }
+
+            .content-image img {
+                height: 250px;
+                margin-bottom: 25px;
+            }
+
+            .pricing-card {
+                margin-bottom: 25px;
+                padding: 25px;
+            }
+
+            .pricing-price {
+                font-size: 32px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-social {
+                gap: 10px;
+            }
+
+            .navbar-brand img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .navbar-brand span {
+                font-size: 18px !important;
+                line-height: 1.2;
+            }
+        }
+
+        /* Mobile Portrait */
+        @media (max-width: 576px) {
+            body {
+                padding-top: 90px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+
+            .blog-hero h1 {
+                font-size: 24px;
+                padding: 0 5px;
+            }
+
+            .blog-hero p {
+                font-size: 18px;
+                padding: 0 5px;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .content-image img {
+                height: 200px;
+            }
+
+            .pricing-card {
+                padding: 20px;
+            }
+
+            .pricing-price {
+                font-size: 28px;
+            }
+
+            .pricing-badge {
+                top: 15px;
+                right: -35px;
+                padding: 6px 35px;
+                font-size: 12px;
+            }
+
+            .navbar {
+                padding: 8px 0;
+            }
+
+            .navbar-brand span {
+                font-size: 12px !important;
+            }
+
+            .navbar-brand img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .mobile-menu-container .register-btn.mobile {
+                padding: 6px 15px;
+                font-size: 14px !important;
+            }
+
+            .custom-toggler {
+                width: 40px;
+                height: 40px;
+            }
+
+            .custom-toggler .navbar-toggler-icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .copyright p {
+                font-size: 16px !important;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            body {
+                padding-top: 85px;
+            }
+
+            .blog-hero h1 {
+                font-size: 22px;
+            }
+
+            .blog-hero p {
+                font-size: 17px;
+            }
+
+            .feature-card {
+                padding: 15px;
+            }
+
+            .content-image img {
+                height: 180px;
+            }
+
+            .pricing-card {
+                padding: 15px;
+            }
+
+            .pricing-price {
+                font-size: 26px;
+            }
+
+            .navbar {
+                padding: 5px 0;
+            }
+
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .mobile-menu-container {
+                gap: 5px;
+            }
+        }
+
+        /* Tablet Specific Sizes */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .container {
+                max-width: 90%;
+            }
+
+            .pricing-card {
+                padding: 25px;
+            }
+
+            .content-image img {
+                height: 300px;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (min-width: 800px) and (max-width: 1280px) and (orientation: landscape) {
+            .content-image img {
+                height: 400px;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 360px) {
+            .navbar-brand span {
+                font-size: 11px !important;
+                margin-left: 5px;
+            }
+
+            .navbar-brand img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .mobile-menu-container .register-btn.mobile {
+                padding: 5px 12px;
+                font-size: 13px !important;
+            }
+
+            .custom-toggler {
+                width: 35px;
+                height: 35px;
+            }
+
+            .blog-hero h1 {
+                font-size: 20px;
+            }
+
+            .blog-hero p {
+                font-size: 16px;
+            }
+
+            .content-image img {
+                height: 150px;
+            }
+
+            .pricing-price {
+                font-size: 24px;
+            }
+
+            .footer-logo img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .footer-logo {
+                font-size: 18px !important;
+            }
+        }
+
+        /* Specific device sizes */
+        @media (width: 360px) and (height: 800px) {
+            .blog-hero {
+                padding: 40px 0;
+            }
+
+            .blog-hero h1 {
+                font-size: 22px;
+            }
+        }
+
+        @media (width: 390px) and (height: 844px) {
+            .blog-hero h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (width: 393px) and (height: 873px) {
+            .blog-hero h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (width: 412px) and (height: 915px) {
+            .blog-hero h1 {
+                font-size: 26px;
+            }
+        }
+
+        @media (width: 768px) and (height: 1024px) {
+            .content-image img {
+                height: 250px;
+            }
+        }
+
+        @media (width: 1280px) and (height: 800px) {
+            .pricing-card {
+                padding: 25px;
+            }
+        }
+
+        @media (width: 800px) and (height: 1280px) {
+            .container {
+                max-width: 95%;
+            }
+        }
+
+        @media (width: 820px) and (height: 1180px) {
+            .container {
+                max-width: 95%;
+            }
+        }
+
+        .navbar-brand img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+
+        .footer-logo img {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 10px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand me-auto" href="index.html">
+                    <img src="Images/colored-logo[1].png" alt="Compass Housing Logo">
+                    <span style="line-height: 1.5rem;">Compass Housing <br>Society</span>
+                </a>
+
+                <div class="mobile-menu-container d-lg-none">
+                    <button class="dark-mode-toggle" id="darkModeToggle">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto align-items-lg-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-expanded="false">
+                                Home
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">Home Page</a></li>
+                                <li><a class="dropdown-item" href="home2.html">Home Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="blog.html" role="button"
+                                data-bs-toggle="dropdown">
+                                Blog
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="blog.html">Blog page</a></li>
+                                <li><a class="dropdown-item" href="blog2.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="service.html">Services Page</a></li>
+                                <li><a class="dropdown-item" href="servicedetails.html">Service Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="maintanance.html">Page</a>
+                        </li>
+                        <li class="nav-item d-lg-none text-center mt-3">
+                            <a href="Login.html" class="btn register-btn mobile">Login</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="d-none d-lg-flex align-items-center ms-lg-auto">
+                        <button class="dark-mode-toggle" id="darkModeToggleDesktop">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <a href="Login.html" class="btn register-btn desktop">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Blog Hero Section -->
+        <section class="blog-hero">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center fade-in">
+                        <h1>Real Estate Insights & Trends</h1>
+                        <p class="lead">Expert analysis, market trends, and valuable insights from Compass Housing
+                            Society</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: About Real Estate Industry - Reduced text & 4 small cards -->
+        <section class="about-section">
+            <div class="container">
+                <div class="row justify-content-center mb-5 fade-in">
+                    <div class="col-lg-10 text-center">
+                        <h2>Key Real Estate Insights</h2>
+                        <p class="lead">Essential knowledge for modern property investors</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6 fade-in">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Market Analysis</h4>
+                            <p class="feature-card-text">Understanding economic indicators and market trends for smart
+                                investments.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 fade-in delay-1">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>Property Valuation</h4>
+                            <p class="feature-card-text">Determining accurate property values based on location and
+                                amenities.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 fade-in delay-2">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4>Investment Strategies</h4>
+                            <p class="feature-card-text">Strategic planning and risk assessment for successful
+                                investments.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 fade-in delay-3">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4>Sustainable Development</h4>
+                            <p class="feature-card-text">Eco-friendly construction and energy-efficient community
+                                planning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Real Estate Content with changed image -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 fade-in">
+                        <div class="content-image">
+                            <img src="https://brabbu.com/blog/wp-content/uploads/2021/11/Urban-Living-Room-Decor-Modern-Contemporary-Design-Ideas-15.jpg"
+                                alt="Modern Urban Living">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 fade-in delay-1">
+                        <h2>Modern Urban Living Spaces</h2>
+                        <p class="lead">Redefining comfort and convenience in city living</p>
+                        <p class="lead">Contemporary urban residences blend functionality with aesthetic appeal, creating spaces that
+                            adapt to modern lifestyles.</p>
+                        <p class="lead">Open floor plans maximize natural light, while smart storage solutions optimize every square
+                            foot. High-quality finishes and energy-efficient systems add both comfort and value.</p>
+                        <p class="lead">These thoughtfully designed spaces cater to the needs of today's urban dwellers, balancing
+                            privacy with community connectivity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Pricing Template -->
+        <section class="pricing-section">
+            <div class="container">
+                <div class="row justify-content-center mb-5 fade-in">
+                    <div class="col-lg-10 text-center">
+                        <h2>Real Estate Investment Plans</h2>
+                        <p class="lead">Choose the perfect investment plan for your property goals</p>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Basic Plan -->
+                    <div class="col-lg-4 col-md-6 fade-in">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h4 class="pricing-title">Starter Plan</h4>
+                                <div class="pricing-price">$299</div>
+                                <p class="pricing-period">per month</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Property Consultation</li>
+                                <li><i class="fas fa-check"></i> Basic Market Analysis</li>
+                                <li><i class="fas fa-check"></i> Investment Guidance</li>
+                                <li><i class="fas fa-check"></i> Portfolio Management</li>
+                                <li><i class="fas fa-check"></i> Premium Support</li>
+                                <li><i class="fas fa-check"></i> Legal Assistance</li>
+                                <li><i class="fas fa-check"></i> Property Consultation</li>
+                                <li><i class="fas fa-check"></i> Basic Market Analysis</li>
+                            </ul>
+                            <a href="Login.html" class="pricing-btn secondary">Get Started</a>
+                        </div>
+                    </div>
+
+                    <!-- Popular Plan -->
+                    <div class="col-lg-4 col-md-6 fade-in delay-1">
+                        <div class="pricing-card popular">
+                            <div class="pricing-badge">Most Popular</div>
+                            <div class="pricing-header">
+                                <h4 class="pricing-title">Professional Plan</h4>
+                                <div class="pricing-price">$599</div>
+                                <p class="pricing-period">per month</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Full Property Consultation</li>
+                                <li><i class="fas fa-check"></i> Detailed Market Analysis</li>
+                                <li><i class="fas fa-check"></i> Investment Strategy</li>
+                                <li><i class="fas fa-check"></i> Portfolio Management</li>
+                                <li><i class="fas fa-check"></i> Priority Support</li>
+                                <li><i class="fas fa-check"></i> Legal Assistance</li>
+                                <li><i class="fas fa-check"></i> Full Property Consultation</li>
+                                <li><i class="fas fa-check"></i> Detailed Market Analysis</li>
+                            </ul>
+                            <a href="Login.html" class="pricing-btn">Choose Plan</a>
+                        </div>
+                    </div>
+
+                    <!-- Premium Plan -->
+                    <div class="col-lg-4 col-md-6 fade-in delay-2">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h4 class="pricing-title">Enterprise Plan</h4>
+                                <div class="pricing-price">$999</div>
+                                <p class="pricing-period">per month</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Full Property Consultation</li>
+                                <li><i class="fas fa-check"></i> Comprehensive Market </li>
+                                <li><i class="fas fa-check"></i> Advanced Investment </li>
+                                <li><i class="fas fa-check"></i> Full Portfolio Management</li>
+                                <li><i class="fas fa-check"></i> 24/7 Premium Support</li>
+                                <li><i class="fas fa-check"></i> Complete Legal Assistance</li>
+                                <li><i class="fas fa-check"></i>Market Analysis</li>
+                                <li><i class="fas fa-check"></i> Advanced Investment</li>
+                            </ul>
+                            <a href="contact.html" class="pricing-btn secondary">Contact Sales</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="simple-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Images/colored-logo[1].png" alt="Compass Housing Logo">
+                    <br>
+                    Compass Housing Society
+                </div>
+
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="service.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/yourusername" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/yourusername" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/@yourchannel" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+
+                <div class="copyright">
+                    <p>&copy; 2023 Compass Housing Society. All rights reserved. | Privacy Policy | Terms of Service</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeToggleDesktop = document.getElementById('darkModeToggleDesktop');
+        const body = document.body;
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+        }
+
+        if (darkModeToggleDesktop) {
+            darkModeToggleDesktop.addEventListener('click', toggleDarkMode);
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '8px 0';
+                navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '12px 0';
+                navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const navbarCollapse = document.getElementById('navbarNav');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+
+        // Scroll animation
+        function checkScroll() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        // Initial check
+        checkScroll();
+
+        // Fix for mobile viewport height
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+    </script>
+</body>
+
+</html>

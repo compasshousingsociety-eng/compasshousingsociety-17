@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass Housing Society | Premium Real Estate</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8e4585;
+            --primary-light: #a864a0;
+            --primary-very-light: white;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: white;
+            --bg-dark: #121212;
+        }
+
+        .dark-mode {
+            --primary: #121212;
+            --primary-light: #1e1e1e;
+            --primary-very-light: #2a2a2a;
+            --text-dark: #e0e0e0;
+            --text-light: #ffffff;
+            --bg-light: #2a2a2a;
+            --bg-dark: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            transition: all 0.3s ease;
+            position: relative;
+            padding-top: 80px;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            margin: auto;
+            background-image: url("Images/transparent-logo-1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 600px auto;
+            opacity: 0.10;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .dark-mode body::before {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMmEyYTJhIi8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjM1IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8cGF0aCBkPSJNNTAsMTAgTDUwLDkwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8cGF0aCBkPSJNMTAsNTAgTDkwLDUwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8cGF0aCBkPSJNNTAsNTAgTDgwLDIwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8cGF0aCBkPSJNNTAsNTAgTDgwLDgwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8cGF0aCBkPSJNNTAsNTAgTDIwLDIwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8cGF0aCBkPSJNNTAsNTAgTDIwLDgwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4wNSIvPgo8L3N2Zz4=');
+            opacity: 0.1;
+        }
+
+        .dark-mode {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .dark-mode h1,
+        .dark-mode h2,
+        .dark-mode h3,
+        .dark-mode h4,
+        .dark-mode h5,
+        .dark-mode h6 {
+            color: var(--text-light);
+        }
+
+        /* Typography - Fixed Font Sizes - STRICTLY ENFORCED */
+        h1 {
+            font-size: 41px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: 35px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: 27px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        h4 {
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        h5,
+        h6 {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        /* ALL text elements strictly 18px */
+        p,
+        li,
+        span,
+
+        .text-muted,
+        .lead,
+        .copyright,
+        .flip-description,
+        .flip-title,
+        .model-feature-content p,
+        .model-feature-content h4,
+        .special-model-subtitle,
+        .footer-links a,
+        .footer-social a,
+        .about-features li,
+        .property-price,
+        .badge,
+        .dropdown-item,
+        .nav-link,
+        .navbar-brand,
+        .footer-logo,
+        .hero-content p,
+        .section-subtitle,
+        .custom-accordion-title,
+        .map-dot-content p,
+        .expanding-card-content p,
+        .hexagon-desc,
+        .stat-title,
+        .author-avatar+div p {
+            font-size: 18px !important;
+        }
+
+
+
+        .dark-mode p,
+        .dark-mode li,
+        .dark-mode span,
+        .dark-mode a:not(.btn),
+        .dark-mode .text-muted,
+        .dark-mode .lead,
+        .dark-mode .copyright,
+        .dark-mode .flip-description,
+        .dark-mode .flip-title,
+        .dark-mode .model-feature-content p,
+        .dark-mode .model-feature-content h4,
+        .dark-mode .special-model-subtitle,
+        .dark-mode .about-features li,
+        .dark-mode .property-price,
+        .dark-mode .dropdown-item {
+            color: var(--text-dark);
+        }
+
+        /* Navbar - FIXED FOR STICKY */
+        .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .dark-mode .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-light) !important;
+            display: flex;
+            align-items: center;
+            margin-right: 0;
+            white-space: nowrap;
+        }
+
+        .navbar-brand img {
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 5px;
+            color: var(--text-light) !important;
+            transition: all 0.3s ease;
+            padding: 8px 15px !important;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            /* background-color: rgba(255, 255, 255, 0.2); */
+            color: var(--text-light) !important;
+        }
+
+        .dropdown-menu {
+            border-radius: 8px;
+            line-height: 1.5rem;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--bg-light);
+        }
+
+        .dark-mode .dropdown-menu {
+            background-color: var(--primary-light);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            color: var(--text-dark);
+        }
+
+        .dark-mode .dropdown-item {
+            color: var(--text-dark);
+        }
+
+        .dropdown-item:hover {
+            background-color: #f5eaf4;
+            color: #8e4585;
+        }
+
+        .dark-mode .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+
+        /* Custom Toggle Button with Close Icon */
+        .custom-toggler {
+            border: 1px solid var(--text-light);
+            background: none;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .custom-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .custom-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6L24 24M6 24L24 6'/%3e%3c/svg%3e");
+        }
+
+        .custom-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Dark Mode Toggle - FIXED */
+        .dark-mode-toggle {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            color: var(--text-light);
+            flex-shrink: 0;
+        }
+
+        .dark-mode .dark-mode-toggle {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode-toggle i {
+            font-size: 20px;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode-toggle .fa-sun {
+            display: block;
+        }
+
+        .dark-mode-toggle .fa-moon {
+            display: none;
+        }
+
+        .dark-mode .dark-mode-toggle .fa-sun {
+            display: none;
+        }
+
+        .dark-mode .dark-mode-toggle .fa-moon {
+            display: block;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: rotate(15deg);
+        }
+
+     /* Register Button - No blinking, no animations */
+.register-btn {
+    background-color: var(--text-light);
+    color: var(--primary) !important;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-left: 10px;
+    text-decoration: none !important;
+    font-size: 18px !important;
+    display: inline-block;
+    cursor: pointer;
+    animation: none !important;  /* Remove any animations */
+    -webkit-animation: none !important;
+    transition: none !important;  /* Remove transitions */
+}
+
+/* Remove all hover effects completely */
+.register-btn:hover,
+.register-btn:focus,
+.register-btn:active,
+.register-btn:visited {
+    background-color: var(--text-light) !important;
+    color: var(--primary) !important;
+    border: none !important;
+    padding: 8px 25px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    margin-left: 10px !important;
+    text-decoration: none !important;
+    font-size: 18px !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    transform: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+}
+
+        .dark-mode .register-btn {
+            color: var(--primary) !important;
+        }
+
+        .dark-mode .register-btn:hover {
+            background-color: #f0f0f0;
+            color: var(--primary) !important;
+        }
+
+        /* Mobile Menu Container */
+        .mobile-menu-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ===== LOGIN BUTTON VISIBILITY FIX ===== */
+
+        /* Desktop login button visible */
+        .register-btn.desktop {
+            display: inline-flex;
+        }
+
+        /* Hide mobile login on desktop */
+        @media (min-width: 992px) {
+            .register-btn.mobile {
+                display: none !important;
+            }
+        }
+
+        /* Show mobile login inside menu */
+        @media (max-width: 991px) {
+            .register-btn.mobile {
+                display: inline-flex !important;
+                justify-content: center;
+                /* width: 80%; */
+                /* max-width: 260px; */
+                margin: 10px auto 0;
+            }
+        }
+
+        /* Main Content */
+        main {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Footer */
+        .simple-footer {
+            background-color: var(--primary);
+            color: var(--text-light) !important;
+            padding: 40px 0 20px;
+        }
+
+        .dark-mode .simple-footer {
+            background-color: var(--primary);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            color: var(--text-light) !important;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: var(--text-light) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .footer-social a {
+            color: var(--text-light) !important;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .footer-social a:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            opacity: 0.8;
+            color: var(--text-light);
+        }
+
+        /* Text Colors for Dark Mode */
+        .dark-mode .text-muted {
+            color: #b0b0b0 !important;
+        }
+
+        .dark-mode .text-primary {
+            color: var(--text-light) !important;
+        }
+
+        .badge.bg-primary {
+            background-color: var(--primary-light) !important;
+            color: var(--text-light) !important;
+        }
+
+        /* =============== RESPONSIVE FIXES =============== */
+
+        /* Large Desktop */
+        @media (max-width: 1920px) {
+            .container {
+                max-width: 1600px;
+            }
+        }
+
+        @media (max-width: 1536px) {
+            .container {
+                max-width: 1400px;
+            }
+        }
+
+        @media (max-width: 1366px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        @media (max-width: 1280px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 35px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 20px;
+            }
+
+            h5,
+            h6 {
+                font-size: 18px;
+            }
+
+            /* Maintain 18px for all text elements */
+            p,
+            li,
+            span,
+            a:not(.btn),
+            .text-muted,
+            .lead,
+            .copyright,
+            .flip-description,
+            .flip-title,
+            .model-feature-content p,
+            .model-feature-content h4,
+            .special-model-subtitle,
+            .footer-links a,
+            .footer-social a,
+            .about-features li,
+            .property-price,
+            .badge,
+            .dropdown-item,
+            .nav-link,
+            .navbar-brand,
+            .footer-logo {
+                font-size: 18px !important;
+            }
+
+            .navbar-brand span {
+                font-size: 16px !important;
+                line-height: 1.2;
+            }
+
+            .navbar-brand img {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        /* Tablet Portrait */
+        @media (max-width: 991px) {
+            body {
+                padding-top: 100px;
+            }
+
+            .navbar-collapse {
+                background-color: var(--primary);
+                padding: 20px;
+                border-radius: 8px;
+                /* margin-top: 10px; */
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                line-height: 0.5;
+            }
+
+            .dark-mode .navbar-collapse {
+                background-color: var(--primary);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-item {
+                margin-bottom: 10px;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-nav .nav-item {
+                width: 100%;
+            }
+
+            .navbar-nav .nav-link {
+                text-align: center;
+                width: 100%;
+                padding: 12px 15px !important;
+            }
+
+            .navbar-collapse .dark-mode-toggle {
+                margin: 10px auto 5px;
+                display: block;
+                width: 45px;
+                height: 45px;
+            }
+
+
+            .custom-toggler {
+                order: 2;
+            }
+
+            .navbar-brand {
+                order: 0;
+                margin-right: auto;
+                max-width: 200px;
+            }
+
+            .mobile-menu-container .register-btn.mobile {
+                display: inline-flex !important;
+                order: 1;
+                margin-right: 5px;
+                padding: 8px 20px;
+                font-size: 16px !important;
+            }
+
+            .mobile-menu-container {
+                gap: 8px;
+                min-width: 120px;
+                justify-content: flex-end;
+            }
+
+            .register-btn.desktop {
+                display: none !important;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-btns {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero-btn {
+                padding: 12px 30px;
+                font-size: 18px !important;
+                min-width: 200px;
+            }
+
+            .map-container {
+                margin-top: 30px;
+            }
+
+            .expanding-cards {
+                flex-direction: column;
+                height: auto !important;
+            }
+
+            .expanding-card {
+                height: 300px;
+                margin-bottom: 20px;
+            }
+
+            .expanding-card:hover {
+                flex: 1 !important;
+            }
+        }
+
+        /* Mobile Landscape */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+
+            h5,
+            h6 {
+                font-size: 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+                padding: 0 10px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .hero-btn {
+                width: 100%;
+                max-width: 300px;
+                padding: 12px 25px;
+            }
+
+            .map-section {
+                padding: 20px 0;
+            }
+
+            .map-container {
+                height: 350px;
+                padding: 20px;
+            }
+
+            .expanding-card {
+                height: 250px;
+            }
+
+            .expanding-card-content {
+                padding: 20px;
+            }
+
+            .expanding-card-content h3 {
+                font-size: 20px;
+            }
+
+            .faq-section {
+                padding: 20px 0;
+            }
+
+            .custom-accordion-header {
+                padding: 20px;
+            }
+
+            .custom-accordion-title {
+                font-size: 16px;
+                text-align: left;
+            }
+
+            .custom-accordion-content {
+                padding: 0 20px;
+            }
+
+            .custom-accordion-item.active .custom-accordion-content {
+                padding: 0 20px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-social {
+                gap: 10px;
+            }
+
+            .navbar-brand img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .navbar-brand span {
+                font-size: 18px !important;
+                line-height: 1.2;
+            }
+        }
+
+        /* Mobile Portrait */
+        @media (max-width: 576px) {
+            body {
+                padding-top: 90px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+
+            .hero-content h1 {
+                font-size: 24px;
+                padding: 0 5px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+                padding: 0 5px;
+            }
+
+            .hero-btns {
+                width: 100%;
+            }
+
+            .hero-btn {
+                max-width: 100%;
+                padding: 10px 20px;
+            }
+
+            .map-container {
+                height: 300px;
+                padding: 15px;
+            }
+
+            .expanding-card {
+                height: 200px;
+            }
+
+            .expanding-card-content {
+                padding: 15px;
+            }
+
+            .expanding-card-content h3 {
+                font-size: 18px;
+            }
+
+            .expanding-card-content p {
+                font-size: 16px;
+            }
+
+            .expanding-card-badge {
+                padding: 6px 12px;
+                font-size: 16px;
+            }
+
+            .navbar {
+                padding: 8px 0;
+            }
+
+            .navbar-brand span {
+                font-size: 12px !important;
+            }
+
+            .navbar-brand img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .mobile-menu-container .register-btn.mobile {
+                padding: 6px 15px;
+                font-size: 14px !important;
+            }
+
+            .custom-toggler {
+                width: 40px;
+                height: 40px;
+            }
+
+            .custom-toggler .navbar-toggler-icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .copyright p {
+                font-size: 16px !important;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            body {
+                padding-top: 85px;
+            }
+
+            .hero-content h1 {
+                font-size: 22px;
+            }
+
+            .hero-content p {
+                font-size: 17px;
+            }
+
+            .hero-btn {
+                padding: 10px 15px;
+                font-size: 17px !important;
+            }
+
+            .map-container {
+                height: 250px;
+            }
+
+            .expanding-card {
+                height: 180px;
+            }
+
+            .expanding-card-content {
+                padding: 12px;
+            }
+
+            .expanding-card-content h3 {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .expanding-card-content p {
+                font-size: 15px;
+                margin-bottom: 8px;
+                display: none;
+                /* Hide description on very small screens */
+            }
+
+            .expanding-card-content small {
+                font-size: 14px;
+            }
+
+            .custom-accordion-header {
+                padding: 15px;
+            }
+
+            .custom-accordion-title {
+                font-size: 15px;
+                margin-right: 10px;
+            }
+
+            .custom-accordion-icon {
+                width: 25px;
+                height: 25px;
+                flex-shrink: 0;
+            }
+
+            .footer-content {
+                padding: 0 10px;
+            }
+
+            .footer-logo {
+                font-size: 20px !important;
+            }
+
+            .footer-links a {
+                font-size: 16px !important;
+            }
+
+            .footer-social a {
+                font-size: 16px !important;
+            }
+
+            .navbar {
+                padding: 5px 0;
+            }
+
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .mobile-menu-container {
+                gap: 5px;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media (max-width: 360px) {
+            .navbar-brand span {
+                font-size: 11px !important;
+                margin-left: 5px;
+            }
+
+            .navbar-brand img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .mobile-menu-container .register-btn.mobile {
+                padding: 5px 12px;
+                font-size: 13px !important;
+            }
+
+            .custom-toggler {
+                width: 35px;
+                height: 35px;
+            }
+
+            .hero-content h1 {
+                font-size: 20px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .hero-btn {
+                padding: 8px 12px;
+                font-size: 16px !important;
+            }
+
+            .expanding-card {
+                height: 150px;
+            }
+
+            .expanding-card-content h3 {
+                font-size: 14px;
+            }
+
+            .expanding-card-badge {
+                padding: 4px 8px;
+                font-size: 14px;
+                top: 10px;
+                right: 10px;
+            }
+
+            .footer-logo img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .footer-logo {
+                font-size: 18px !important;
+            }
+        }
+
+        /* =============== COMPONENT STYLES =============== */
+
+        main section:nth-child(odd) {
+            background-color: rgba(142, 69, 133, 0.03);
+        }
+
+        .dark-mode main section:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* FIXED HERO SECTION SPACING */
+        .hero-section {
+            min-height: auto;
+            padding: 40px 0 !important;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg,
+                    rgba(142, 69, 133, 0.05) 0%,
+                    rgba(168, 100, 160, 0.05) 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            /* margin-bottom: 20px; */
+            font-size: 41px;
+            text-shadow: none;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            /* margin-bottom: 30px; */
+            color: var(--text-dark);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            padding: 14px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 16px !important;
+        }
+
+        .hero-btn.primary {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .hero-btn.secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .hero-btn.primary:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .hero-btn.secondary:hover {
+            background-color: rgba(142, 69, 133, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* SECTION 3: INTERACTIVE MAP */
+        .map-section {
+            position: relative;
+            min-height: auto;
+            /* padding: 40px 0; */
+            /* background: var(--bg-light); */
+            display: flex;
+            align-items: center;
+            color: var(--text-dark);
+        }
+
+        .dark-mode .map-section {
+            /* background: var(--bg-dark); */
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: rgba(142, 69, 133, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(142, 69, 133, 0.2);
+            overflow: hidden;
+        }
+
+        .dark-mode .map-container {
+            background: rgba(142, 69, 133, 0.1);
+            border: 1px solid rgba(142, 69, 133, 0.3);
+        }
+
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .prime-class {
+            color: var(--primary) !important;
+        }
+
+        .dark-mode .prime-class {
+            color: var(--text-light) !important;
+        }
+
+        /* SECTION 4: EXPANDING CARDS GALLERY */
+        .gallery-section {
+            padding: 40px 0;
+        }
+
+        .section-title-main {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .expanding-cards {
+            display: flex;
+            height: 500px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .expanding-card {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .expanding-card:hover {
+            flex: 3;
+        }
+
+        .expanding-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .expanding-card:hover .expanding-card-image {
+            transform: scale(1.05);
+        }
+
+        .expanding-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 30px;
+            transform: translateY(100%);
+            transition: all 0.5s ease;
+        }
+
+        .expanding-card:hover .expanding-card-content {
+            transform: translateY(0);
+        }
+
+        .expanding-card-content h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .expanding-card-content p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .expanding-card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        /* SECTION 6: ACCORDION FAQ */
+        .faq-section {
+            padding: 40px 0;
+            background-color: rgba(142, 69, 133, 0.03);
+        }
+
+        .dark-mode .faq-section {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .accordion-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .custom-accordion-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .custom-accordion-item {
+            background: var(--primary-very-light);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-accordion-item:hover {
+            box-shadow: 0 10px 30px rgba(142, 69, 133, 0.1);
+        }
+
+        .custom-accordion-header {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .custom-accordion-header:hover {
+            background: rgba(142, 69, 133, 0.05);
+        }
+
+        .custom-accordion-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0;
+            flex: 1;
+            text-align: left;
+        }
+
+        .custom-accordion-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            transform: rotate(0deg);
+            flex-shrink: 0;
+        }
+
+        .custom-accordion-item.active .custom-accordion-icon {
+            transform: rotate(45deg);
+            background: var(--primary-light);
+        }
+
+        .custom-accordion-content {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .custom-accordion-item.active .custom-accordion-content {
+            padding: 0 30px 25px;
+            max-height: 500px;
+        }
+
+        .custom-accordion-content p {
+            font-size: 18px;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.6s;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 768px) {
+            .expanding-card-content {
+                transform: translateY(0) !important;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                padding: 20px;
+            }
+
+            .expanding-card-content p {
+                font-size: 16px;
+            }
+
+            .expanding-card:hover {
+                transform: none;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .hero-section+section {
+                margin-top: 0;
+            }
+
+            /* Ensure all sections have proper spacing */
+            section {
+                padding: 40px 0 !important;
+            }
+
+            /* Fix accordion text on mobile */
+            .custom-accordion-title {
+                font-size: 18px !important;
+                line-height: 1.4;
+            }
+
+            .custom-accordion-content p {
+                font-size: 17px !important;
+                line-height: 1.5;
+            }
+        }
+
+        /* Fix for very small screens */
+        @media (max-width: 320px) {
+            .hero-content h1 {
+                font-size: 18px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+            }
+
+            .hero-btn {
+                font-size: 15px !important;
+                padding: 8px 10px;
+            }
+
+            .navbar-brand span {
+                display: none;
+                /* Hide text on very small screens */
+            }
+
+            .navbar-brand img {
+                margin-right: 0;
+            }
+
+            .mobile-menu-container .register-btn.mobile {
+                padding: 4px 8px;
+                font-size: 12px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand me-auto" href="index.html">
+                    <img src="Images/colored-logo[1].png" alt="" width="50" height="50" style="border-radius:10px;">
+                    <span style="margin-left: 10px;line-height: 1.5rem;"> Compass Housing <br>Society</span>
+                </a>
+
+                <div class="mobile-menu-container d-lg-none">
+                    <button class="dark-mode-toggle" id="darkModeToggle">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto align-items-lg-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="index.html" id="homeDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                Home
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">Home Page</a></li>
+                                <li><a class="dropdown-item" href="home2.html">Home Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="blog.html" id="blogDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                Blog
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="blog.html">Blog Page</a></li>
+                                <li><a class="dropdown-item" href="blog2.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="service.html" id="serviceDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="service.html">Services Page</a></li>
+                                <li><a class="dropdown-item" href="servicedetails.html">Service Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="maintanance.html">page</a>
+                        </li>
+
+                        <!-- Dark mode button inside menu for mobile -->
+                        <li class="nav-item d-lg-none text-center mt-3">
+
+                            <a href="Login.html" class="btn register-btn mobile">Login</a>
+
+                        </li>
+
+                    </ul>
+
+                    <!-- Desktop: Dark mode and register on left corner -->
+                    <div class="d-none d-lg-flex align-items-center ms-lg-auto">
+                        <button class="dark-mode-toggle" id="darkModeToggleDesktop">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <a href="Login.html" class="btn register-btn desktop">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1>Find Your Dream Home With Compass Housing</h1>
+                    <p>Premium residential properties with world-class amenities, designed for modern living and built
+                        for lasting value.</p>
+                    <div class="hero-btns">
+                        <a href="aboutus.html" class="hero-btn primary">Explore Properties</a>
+                        <a href="contact.html" class="hero-btn secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Interactive Map - Locations -->
+        <section id="interactive-map" class="map-section">
+            <div class="container" style="padding: 40px;">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="fade-in">
+                            <h2 class="prime-class">Prime Locations</h2>
+                            <p class="lead">Strategically located in the city's most desirable neighborhoods,
+                                offering excellent connectivity and premium lifestyle.</p>
+                            <p class="lead">Each Compass Housing community is carefully positioned to provide the
+                                perfect balance of
+                                urban convenience and peaceful living.</p>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li class="lead mb-2"><i class="fas fa-check-circle me-2"></i> Proximity to business
+                                    districts</li>
+                                <li class="lead mb-2"><i class="fas fa-check-circle me-2"></i> Access to premium schools
+                                </li>
+                                <li class="lead mb-2"><i class="fas fa-check-circle me-2"></i> Nearby healthcare
+                                    facilities
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="map-container fade-in delay-1">
+                            <img src="https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg"
+                                alt="Real Estate Map" style="height: 100%;width: 100%;object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Expanding Cards Gallery -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="section-title-main fade-in">
+                    <h2>Property Gallery</h2>
+                    <p class="lead">Explore our premium residential spaces through interactive visualization</p>
+                </div>
+                <div class="expanding-cards">
+                    <!-- Card 1 -->
+                    <div class="expanding-card fade-in">
+                        <div class="expanding-card-badge">Luxury</div>
+                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Living Room" class="expanding-card-image">
+                        <div class="expanding-card-content">
+                            <h3>Modern Living Room</h3>
+                            <p>Spacious open-concept living area with premium finishes and natural lighting.</p>
+                            <small><i class="fas fa-ruler-combined me-1"></i> 450 sq.ft</small>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="expanding-card fade-in delay-1">
+                        <div class="expanding-card-badge">Design</div>
+                        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Kitchen" class="expanding-card-image">
+                        <div class="expanding-card-content">
+                            <h3>Gourmet Kitchen</h3>
+                            <p>Fully equipped modern kitchen with premium appliances and granite countertops.</p>
+                            <small><i class="fas fa-utensils me-1"></i> Premium appliances</small>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="expanding-card fade-in delay-2">
+                        <div class="expanding-card-badge">Relax</div>
+                        <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Bedroom" class="expanding-card-image">
+                        <div class="expanding-card-content">
+                            <h3>Master Bedroom</h3>
+                            <p>Luxurious master suite with walk-in closet and ensuite bathroom.</p>
+                            <small><i class="fas fa-bed me-1"></i> King size bed area</small>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="expanding-card fade-in">
+                        <div class="expanding-card-badge">Views</div>
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Balcony" class="expanding-card-image">
+                        <div class="expanding-card-content">
+                            <h3>Private Balcony</h3>
+                            <p>Spacious balcony with panoramic city views and outdoor seating area.</p>
+                            <small><i class="fas fa-mountain me-1"></i> City skyline view</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Accordion FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-title-main fade-in">
+                    <h2>Frequently Asked Questions</h2>
+                    <p class="lead">Find answers to common questions about Compass Housing</p>
+                </div>
+                <div class="accordion-container">
+                    <!-- FAQ 1 -->
+                    <div class="custom-accordion-item fade-in">
+                        <div class="custom-accordion-header">
+                            <h4 class="custom-accordion-title">What makes Compass Housing different from other
+                                developers?</h4>
+                            <div class="custom-accordion-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="custom-accordion-content">
+                            <p>Compass Housing focuses on creating complete communities, not just buildings. We
+                                integrate premium amenities, sustainable design, and smart technology into every
+                                project. Our attention to detail, quality construction, and customer-centric approach
+                                have earned us numerous industry awards and high customer satisfaction ratings.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="custom-accordion-item fade-in delay-1">
+                        <div class="custom-accordion-header">
+                            <h4 class="custom-accordion-title">What payment options are available?</h4>
+                            <div class="custom-accordion-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="custom-accordion-content">
+                            <p>We offer flexible payment plans including down payment options, installment plans, and
+                                bank financing assistance. Our financial advisors can help customize a payment plan that
+                                suits your budget. We also have partnerships with leading banks for preferential home
+                                loan rates.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="custom-accordion-item fade-in delay-2">
+                        <div class="custom-accordion-header">
+                            <h4 class="custom-accordion-title">What amenities are included in the community?</h4>
+                            <div class="custom-accordion-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="custom-accordion-content">
+                            <p>All Compass Housing communities feature: 24/7 security with CCTV surveillance, landscaped
+                                gardens, swimming pool, fitness center, children's play area, clubhouse, and high-speed
+                                internet infrastructure. Some premium projects also include concierge services, smart
+                                home automation, and private parking.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="custom-accordion-item fade-in">
+                        <div class="custom-accordion-header">
+                            <h4 class="custom-accordion-title">What is the construction quality and warranty?</h4>
+                            <div class="custom-accordion-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="custom-accordion-content">
+                            <p>We use premium materials and follow strict quality control standards. All our projects
+                                come with a 10-year structural warranty and 2-year workmanship warranty. Regular quality
+                                audits are conducted by third-party inspectors to ensure adherence to the highest
+                                construction standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="simple-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Images/colored-logo[1].png" alt="" width="30" height="30" style="border-radius:50px;"><br>
+                    Compass Housing Society
+                </div>
+
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="service.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/yourusername" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/yourusername" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/@yourchannel" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+
+
+                <div class="copyright">
+                    <p>&copy; 2023 Compass Housing Society. All rights reserved. | Privacy Policy | Terms of Service</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeToggleDesktop = document.getElementById('darkModeToggleDesktop');
+        const body = document.body;
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+        }
+
+        if (darkModeToggleDesktop) {
+            darkModeToggleDesktop.addEventListener('click', toggleDarkMode);
+        }
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '8px 0';
+                navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '12px 0';
+                navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    const navbarCollapse = document.getElementById('navbarNav');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+
+        function checkScroll() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        const accordionItems = document.querySelectorAll('.custom-accordion-item');
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.custom-accordion-header');
+            header.addEventListener('click', () => {
+                accordionItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                item.classList.toggle('active');
+            });
+        });
+
+        if (window.innerWidth > 991) {
+            const expandingCards = document.querySelectorAll('.expanding-card');
+            expandingCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    expandingCards.forEach(c => {
+                        if (c !== card) {
+                            c.style.opacity = '0.7';
+                        }
+                    });
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    expandingCards.forEach(c => {
+                        c.style.opacity = '1';
+                    });
+                });
+            });
+        }
+
+        if (window.innerWidth <= 991) {
+            const expandingCards = document.querySelectorAll('.expanding-card');
+            const expandingCardsContainer = document.querySelector('.expanding-cards');
+
+            if (expandingCardsContainer) {
+                expandingCardsContainer.style.flexDirection = 'column';
+                expandingCardsContainer.style.height = 'auto';
+            }
+
+            expandingCards.forEach(card => {
+                card.style.marginBottom = '20px';
+                card.style.flex = 'none';
+                card.style.height = '250px';
+
+                const content = card.querySelector('.expanding-card-content');
+                if (content) {
+                    content.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        checkScroll();
+
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+    </script>
+</body>
+
+</html>
